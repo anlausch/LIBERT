@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
-echo "script started"
-#while gpusage | grep -q 'dws04    0'; do
-#   echo "gpu still occupied"
-#   sleep 120
-#done
-echo "starting process now";
 export CUDA_VISIBLE_DEVICES=2
-INPUT_FILE_STANDARD="/work/anlausch/wiki-en-pre2-correct.tfrecord"
-INPUT_FILE_WORDNET="./../data/syn_hyp1_constraints_ivan_2.tfrecord"
-OUTPUT_DIR="/work/anlausch/replant/bert/pretraining/poc_over_time/wn_binary_16_longer"
+INPUT_FILE_STANDARD=".../wiki-en-pre2-correct.tfrecord"
+INPUT_FILE_WORDNET=".../syn_hyp_constraints.tfrecord"
+OUTPUT_DIR=".../poc_over_time/wn_binary_16_longer"
 NUM_TRAIN_STEPS=4000000
-BERT_BASE_DIR="/work/anlausch/replant/bert/data/BERT_base_new"
+BERT_BASE_DIR=""
 BERT_CONFIG=$BERT_BASE_DIR/bert_config.json
 WN_MODEL_VARIANT="WN_PAIRS_BINARY"
 

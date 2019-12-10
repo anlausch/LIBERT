@@ -9,7 +9,7 @@ def parse_predictions(input_path, output_path, task="STSB"):
   :param output_path:
   :param task:
   :return:
-  >>> parse_predictions("/work/anlausch/replant/bert/predictions/wn_binary/mnli_neu_32_5e-05_3.0/test_results.tsv", "/work/anlausch/replant/bert/predictions/wn_binary_32_5e-05_3.0/MNLI-mm-neu.tsv", task="MNLI")
+  >>> parse_predictions("/test_results.tsv", "test.tsv", task="MNLI")
   """
   if task != "STSB":
     import run_classifier_wordnet
@@ -51,13 +51,13 @@ def parse_predictions(input_path, output_path, task="STSB"):
     f_out.close()
 
 
-def write_fake_predictions(output_path, task="MRPC"):
+def write_fake_predictions(output_path, task="WNLI"):
   """
   :param input_path:
   :param output_path:
   :param task:
   :return:
-  >>> write_fake_predictions("/work/anlausch/replant/bert/predictions/base_32_5e-05_3.0/copy_for_submission/fakes/STS-B.tsv", task="STSB")
+  >>> write_fake_predictions("/WNLI.tsv", task="WNLI")
   """
   if task != "STSB":
     import run_classifier_wordnet

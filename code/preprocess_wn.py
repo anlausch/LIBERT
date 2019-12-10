@@ -1400,12 +1400,8 @@ def write_input_data_syn_hyp_constraints(vocab_file="./../data/BERT_base_new/voc
 
 
 def main():
-    print("test")
     #create_data_syn_hyp_constraints()
     write_input_data_syn_hyp_constraints()
-    #create_entities_matrix(vocab_file='./../data/vocab.txt', do_lower_case=True)
-    #write_input_data(vocab_file_bert="./../data/BERT_base_new/vocab_extended.txt",multiclass=False, do_lower_case=True, max_sequence_length=128, vocab_file_rel="./../data/vocab_relations.txt", output_file="./../data/wordnet_binary_new.tfrecord", extended_segments=False, load_from_disk=True)
-    #write_input_data_identifiable(bert_vocab_file='./../data/vocab.txt', wn_vocab_file='./../data/vocab_relations.txt', do_lower_case=True, max_sequence_length=128, output_file='./../data/wordnet_identifiable.tfrecord', word_level=False, entities_vocab='./../data/wn_terms_vocab.txt')
 
 if __name__=="__main__":
     main()

@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 export CUDA_VISIBLE_DEVICES=2
-BERT_BASE_DIR="/work/anlausch/replant/bert/data/BERT_base_new"
+BERT_BASE_DIR=""
 VOCAB_DIR=$BERT_BASE_DIR/vocab.txt
-BERT_STANDARD_DIR="/work/anlausch/replant/bert/pretraining/poc_over_time/base_16_longer"
-OUTPUT_DIR="/work/anlausch/replant/bert/finetuning/poc_over_time/base_16_longer"
+BERT_STANDARD_DIR=".../base_16_longer"
+OUTPUT_DIR=".../finetuning/poc_over_time/base_16_longer"
 BERT_CONFIG=$BERT_BASE_DIR/bert_config.json
 
 for STEP in "2000000"; do
     CHECKPOINT=${BERT_STANDARD_DIR}/model.ckpt-${STEP}
-    #for task_name in "CoLA" "MRPC" "RTE" "SST2" "QNLIV2" "QQP" "MNLI"; do
-    for task_name in "MNLI"; do
+    for task_name in "CoLA" "MRPC" "RTE" "SST2" "QNLIV2" "QQP" "MNLI"; do
         echo $task_name
         echo $CHECKPOINT
 
@@ -32,7 +31,6 @@ for STEP in "2000000"; do
         --output_dir=$OUTPUT_DIR/${STEP}/${task_name} |& tee $OUTPUT_DIR/${STEP}/${task_name}.out
     done
 
-    # check whether there is a problem with the regression tasks
     for task_name in "STSB" ; do
         echo $task_name
         export GLUE_DATA="$GLUE_DIR/$task_name"

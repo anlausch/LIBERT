@@ -2,7 +2,7 @@ import codecs
 import re
 from nltk import word_tokenize
 
-def preprocess_wiki(read_path='/work/gglavas/data/corpora/wikipedia/wiki-en.txt', write_path='/work/anlausch/wiki-en-pre2.txt'):
+def preprocess_wiki(read_path='.../corpora/wikipedia/wiki-en.txt', write_path='.../wiki-en-pre2.txt'):
     """
     >>> preprocess_wiki()
     """
