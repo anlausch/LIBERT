@@ -15,7 +15,7 @@ BERT_CONFIG=$BERT_BASE_DIR/bert_config.json
 WN_MODEL_VARIANT="WN_PAIRS_BINARY"
 
 
-python run_pretraining_wordnet.py \
+python run_pretraining_libert.py \
 --input_file_standard=$INPUT_FILE_STANDARD \
 --input_file_wn=$INPUT_FILE_WORDNET \
 --output_dir=$OUTPUT_DIR \

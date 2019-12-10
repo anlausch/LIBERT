@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
-export CUDA_VISIBLE_DEVICES=1
+export CUDA_VISIBLE_DEVICES=2
 BERT_BASE_DIR="/work/anlausch/replant/bert/data/BERT_base_new"
 VOCAB_DIR=$BERT_BASE_DIR/vocab.txt
 BERT_STANDARD_DIR="/work/anlausch/replant/bert/pretraining/poc_over_time/base_16_longer"
 OUTPUT_DIR="/work/anlausch/replant/bert/finetuning/poc_over_time/base_16_longer"
 BERT_CONFIG=$BERT_BASE_DIR/bert_config.json
 
-for STEP in "1000000" "400000" "800000" "1200000"; do
+for STEP in "2000000"; do
     CHECKPOINT=${BERT_STANDARD_DIR}/model.ckpt-${STEP}
-    for task_name in "CoLA" "MRPC" "RTE" "SST2" "QNLI" ; do
+    #for task_name in "CoLA" "MRPC" "RTE" "SST2" "QNLIV2" "QQP" "MNLI"; do
+    for task_name in "MNLI"; do
         echo $task_name
         echo $CHECKPOINT
 

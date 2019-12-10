@@ -26,7 +26,7 @@ import re
 import six
 import tensorflow as tf
 
-## upspec extension
+
 from conditioned_scope import cond_scope
 
 class BertConfig(object):

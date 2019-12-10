@@ -1,6 +1,6 @@
 import tensorflow as tf
 """
-Extension for RESCAL multitask etc..
+Extension for multitask etc..
 """
 class empty_scope():
   def __init__(self):
