@@ -4,9 +4,7 @@ This repository contains the code associated with the following paper:
 
 
 Specializing Unsupervised Pretraining Models for Word-Level Semantic Similarity
-
 (Anne Lauscher, Ivan Vulić, Edoardo Maria Ponti, Anna Korhonen, Goran Glavaš)
-
 https://arxiv.org/pdf/1909.02339.pdf
 
 ## Repository Description
@@ -17,11 +15,23 @@ The model is only different from the original BERT code in the way it shares the
 
 ### Pretraining Procedure
 #### Data Generation
+#### Wikipedia
 We trained both BERT and LIBERT on a dump of the English Wikipedia. For this, we've used 
 - ```poc_pretraining_bert.sh```
 - ```poc_create_pretraining_data.sh```
 
-The code needed to preprocess the lexico-semantic constraints is given in ```preprocess_wn.py```.
+#### Similarity Constraints
+The lexico-semantic constraints were given in a simple space separated file:
+```
+en_zymosis en_fermentation
+en_zymosis en_fermentation
+en_zymosis en_fermenting
+en_zymosis en_fermenting
+en_zymosis en_zymolysis
+```
+The code needed to preprocess these constraints is given in ```preprocess_wn.py```.
+1. Out of these constraints, we created the actual input data by sampling negative examples from an auxiliary embedding space (function ```create_data_syn_hyp_constraints```)
+2. Next, we created the .tfrecords file (function ```write_input_data_syn_hyp_constraints```)
 
 #### Actual Pretraining
 LIBERT is pretrained from scratch via two classes of objectives (1) BERT's "standard" objectives, MLM and NSP, and (2) Lexical Relation Classification. We therefore provide the pretraining script in two variants accordingly:
