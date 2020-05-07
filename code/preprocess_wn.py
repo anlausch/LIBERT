@@ -1385,12 +1385,12 @@ def create_data_syn_hyp_constraints():
     print("Number of positive examples %d" % len(true_constraints))
     all_constraints = smart_negative_sampling(true_constraints, true_constraints_dict)
     print("Number of all examples %d" % len(all_constraints))
-    pickle.dump(all_constraints, open("./../data/all_constraints_ivan_2.p", "wb"))
+    pickle.dump(all_constraints, open("./../data/all_constraints.p", "wb"))
 
 
 
 def write_input_data_syn_hyp_constraints(vocab_file="./../data/BERT_base_new/vocab.txt", output_file="./../data/syn_hyp1_constraints_ivan_2_test.tfrecord"):
-    all_contraints = pickle.load(open("./../data/all_constraints_ivan_2.p", "rb"))
+    all_contraints = pickle.load(open("./../data/all_constraints.p", "rb"))
     all_contraints = create_input_pair(all_contraints, "TRAIN")
     tokenizer = tokenization.FullTokenizer(vocab_file=vocab_file, do_lower_case=True)
     file_based_convert_pair_to_features(examples=all_contraints, label_list=[True, False],
