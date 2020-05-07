@@ -15,7 +15,7 @@ for config in "MNLI_16_3e-05_3/model.ckpt-73631","MNLI"; do
     TASK=$2
     TRAINED_CLASSIFIER=${ROOT}${1}
 
-    python run_classifier_wordnet.py \
+    python run_classifier_libert.py \
       --task_name=${TASK} \
       --do_predict=true \
       --do_train=false \
@@ -40,7 +40,7 @@ done
 #
 #TRAINED_CLASSIFIER=".../STSB_16_2e-05_3/model.ckpt-1077"
 #TASK="STSB"
-#python run_regression_wordnet.py \
+#python run_regression_libert.py \
 #  --task_name=${TASK} \
 #  --do_predict=true \
 #  --do_train=false \

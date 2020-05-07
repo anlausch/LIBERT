@@ -15,7 +15,7 @@ TRAINED_CLASSIFIER="/libert/2000000/MNLI_16_3e-05_3/model.ckpt-73631"
 
         GLUE_DATA="$GLUE_DIR/$task_name"
 
-        python run_classifier_wordnet.py   \
+        python run_classifier_libert.py   \
         --task_name=$task_name \
         --do_train=false \
         --do_eval=true \

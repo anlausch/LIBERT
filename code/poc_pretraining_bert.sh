@@ -6,7 +6,7 @@ NUM_TRAIN_STEPS=2000000
 BERT_BASE_DIR=""
 BERT_CONFIG=$BERT_BASE_DIR/bert_config.json
 
-python run_pretraining.py \
+python run_pretraining_bert.py \
 --input_file=$INPUT_FILE_STANDARD \
 --output_dir=$OUTPUT_DIR \
 --do_train=True \

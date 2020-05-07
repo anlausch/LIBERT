@@ -14,7 +14,7 @@ for STEP in "2000000"; do
 
         GLUE_DATA="$GLUE_DIR/$task_name"
 
-        python run_classifier_wordnet.py   \
+        python run_classifier_libert.py   \
         --task_name=$task_name \
         --do_train=true \
         --do_eval=true \
@@ -35,7 +35,7 @@ for STEP in "2000000"; do
         echo $task_name
         export GLUE_DATA="$GLUE_DIR/$task_name"
 
-        python run_regression_wordnet.py   \
+        python run_regression_libert.py   \
         --task_name=$task_name \
         --do_train=true \
         --do_eval=true \

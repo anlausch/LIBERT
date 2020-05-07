@@ -15,7 +15,7 @@ for STEP in "20000" "40000" "60000" "80000" "100000" "120000" "140000" "160000" 
         echo $task_name
         export GLUE_DATA="$GLUE_DIR/$task_name"
 
-        python run_regression_wordnet.py   \
+        python run_regression_libert.py   \
         --task_name=$task_name \
         --do_train=true \
         --do_eval=true \
@@ -38,7 +38,7 @@ for STEP in "20000" "40000" "60000" "80000" "100000" "120000" "140000" "160000" 
 
         GLUE_DATA="$GLUE_DIR/$task_name"
 
-        python run_classifier_wordnet.py   \
+        python run_classifier_libert.py   \
         --task_name=$task_name \
         --do_train=true \
         --do_eval=true \

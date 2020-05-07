@@ -11,7 +11,7 @@ TRAINED_CLASSIFIER="/1000000/MNLI_16_3e-05_4/model.ckpt-98175"
 TASK="MNLI"
 GLUE_DATA="$GLUE_DIR/${TASK}"
 
-python run_classifier_wordnet.py   \
+python run_classifier_libert.py   \
 --task_name=$TASK \
 --do_train=False \
 --do_eval=true \

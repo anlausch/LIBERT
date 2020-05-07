@@ -15,7 +15,7 @@ for config in "base_16/1000000/MNLI_16_2e-05_4/model.ckpt-98175","MNLI" "base_16
     TASK=$2
     TRAINED_CLASSIFIER=${ROOT}${1}
 
-    python run_classifier_wordnet.py \
+    python run_classifier_libert.py \
       --task_name=${TASK} \
       --do_predict=true \
       --do_train=false \
