@@ -63,6 +63,9 @@ For the predictions, we refer to
 #### Lexical Simplification
 For the lexical simplification evaluation, we've used the BERT-LS code: https://github.com/qiang2100/BERT-LS . For this, we had to port the models to pytorch, which was done via the transformers libray (just make sure to adapt the code in a way that it loads LIBERT's variables correcly.
 
+## Download
+The 2 Million MLM+NSP steps LIBERT checkpoint, which we've discussed in our experiments, is available for download here: https://drive.google.com/drive/folders/1ghvW7zDbgdGqLnlgXXVOhNJKtdzBmPYo?usp=sharing .
+
 ## Credit
 The code is based on the original BERT Tensorflow code at: https://github.com/google-research/bert
 
